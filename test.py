@@ -7,7 +7,7 @@ def test_most_common_words():
     # Test with the example given in the exercise
     sentence = "baz bar foo foo zblah zblah zblah baz toto bar"
     n = 3
-    expected_output = [('zblah', 3), ('baz', 2), ('bar', 2)]
+    expected_output = [('zblah', 3), ('bar', 2), ('baz', 2)]
     assert most_common_words(sentence, n) == expected_output
     # Test with a simple sentence
     sentence = "The quick brown fox jumps over the lazy dog."
