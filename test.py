@@ -53,4 +53,3 @@ def test_input_type_most_common_words():
         most_common_words(sentence, n)
     except Exception as e:
         assert str(e) == expected_output
-        
