@@ -1,3 +1,6 @@
+from collections import Counter
+
+
 def most_common_words(sentence, n):
     # Split the sentence into a list of words
     assert isinstance(sentence, str), "InputError: 'sentence' must be a string."
@@ -5,14 +8,10 @@ def most_common_words(sentence, n):
     words = sentence.split()
     # Create dictionary for the word frequencies
     word_freq = {}
-    # Count the frequency of each word and store it in the dictionary
-    for word in words:
-        if word in word_freq:
-            word_freq[word] += 1
-        else:
-            word_freq[word] = 1
+    # Use the Counter class to count the frequency of each word
+    word_counts = Counter(words)
     # Sort the words by frequency and alphabetical order
-    sorted_words = sorted(word_freq.items(), key=lambda x: (-x[1], x[0]))
+    sorted_words = sorted(word_counts.items(), key=lambda x: (-x[1], x[0]))
     # Return the top n words
     return sorted_words[:n]
 
